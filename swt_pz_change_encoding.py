@@ -8,9 +8,6 @@ while True:
     else:
         print("No such dir")
 
-# ask for translation type
-block_type = input("Block Type: ").strip()
-
 # ask for build version
 build = input("Build: ").strip()
 
@@ -82,12 +79,6 @@ else:
     print("Unknown build version")
     exit()
 
-# Modify the encoding map to include block type prefix
-modified_encoding_map = {}
-for key, value in encoding_map.items():
-    modified_key = f"{block_type}{key}"
-    modified_encoding_map[modified_key] = value
-
 def convert_encoding(file_path, target_encoding):
     try:
         # create backup file
@@ -111,12 +102,13 @@ def convert_encoding(file_path, target_encoding):
         print(f"Error {file_path}: {e}")
 
 # process all matching files in the specified directory and subdirectories
-for filename, target_encoding in modified_encoding_map.items():
-    # find all files with this name in the specified directory and subdirectories
-    for root, dirs, files in os.walk(directory):
-        if filename in files:
-            file_path = os.path.join(root, filename)
-            if os.path.isfile(file_path):
-                convert_encoding(file_path, target_encoding)
+for root, dirs, files in os.walk(directory):
+    for filename in files:
+        # check if any key from encoding_map is in the filename
+        for key, target_encoding in encoding_map.items():
+            if key in filename:
+                file_path = os.path.join(root, filename)
+                if os.path.isfile(file_path):
+                    convert_encoding(file_path, target_encoding)
 
 print("Done")
