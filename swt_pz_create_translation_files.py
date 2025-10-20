@@ -2,10 +2,10 @@ import os
 import re
 
 # ask for input file path
-input_path = input("Path to: ").strip()
+input_path = input("Path to file: ").strip()
 
 # ask for translation type
-block_type = input("Block Type: ").strip()
+block_type = input("Block type: ").strip()
 
 # read the input file
 with open(input_path, 'r') as f:
