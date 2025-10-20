@@ -9,5 +9,4 @@ swt_pz_change_encoding - changes encoding to specified game version and creates 
 
 Usage:
 1. Path to: /42/media/lua/shared/Translations
-2. Block Type: IG_UI
 3. Build: 42
