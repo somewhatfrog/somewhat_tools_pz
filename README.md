@@ -1,12 +1,12 @@
-swt_pz_create_translation_files - takes a file with llm output (or whatever you're going to use) with all the translation blocks it spat out and creates dirs and files with translation blocks for each language next to input file
+**swt_pz_create_translation_files** - takes the file with llm output (or whatever you're going to use) piled with translation blocks it spat out and creates dirs and files for each translation blocks next to the input file
 
 Usage:
 1. Path to: /file_with_translations_to_all_languages.* (any text format, yaml, etc)
 2. Block Type: ContextMenu
 3. Creates: /LANG/ContextMenu_LANG.txt 
 
-swt_pz_change_encoding - changes encoding to specified game version and creates backups (it takes UTF-8 as sources and i hope your sources are UTF-8 kek)
+**swt_pz_change_encoding** - takes path and changes the encoding of all translation files to a specified game version ahd creates backups (it expects UTF-8 as source and i hope your sources are UTF-8 kek)
 
 Usage:
 1. Path to: /42/media/lua/shared/Translations
-3. Build: 42
+2. Build: 42
