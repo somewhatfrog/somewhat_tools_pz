@@ -3,6 +3,7 @@ swt_pz_create_translation_files - takes a file with llm output (or whatever you'
 Usage:
 1. Path to: /file_with_translations_to_all_languages.* (any text format, yaml, etc)
 2. Block Type: ContextMenu
+3. Creates: /LANG/ContextMenu_LANG.txt 
 
 swt_pz_change_encoding - changes encoding to specified game version and creates backups (it takes UTF-8 as sources and i hope your sources are UTF-8 kek)
 
