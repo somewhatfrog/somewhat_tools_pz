@@ -2,11 +2,11 @@ import os
 
 # ask for path
 while True:
-    directory = input("Path to: ").strip()
+    directory = input("Path to directory: ").strip()
     if os.path.exists(directory):
         break
     else:
-        print("No such dir")
+        print("No such directory")
 
 # ask for build version
 build = input("Build: ").strip()
